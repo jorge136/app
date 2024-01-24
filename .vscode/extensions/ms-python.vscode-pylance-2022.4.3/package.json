@@ -1,0 +1,3 @@
+Declaras el tiempo = 0.00
+tiempo = tiempo + 0.001
+  altura = altura - gravedad * pow(tiempo, 2)
