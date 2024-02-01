@@ -1,14 +1,24 @@
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">¡Bienvenidos a BoletosBlink!</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <!-- Contenido del home -->
-  <div class="welcome-container">
-    <h1 class="welcome-heading">Hola</h1>
-    <p class="welcome-message">Gracias por elegir BoletosBlink. Estamos emocionados de tenerte con nosotros.</p>
-    <ion-button expand="full" color="primary" (click)="goToIntro()">¡Dale click para comenzar!</ion-button>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ticket-container">
+    <swiper-container [pagination]="true" [slidesPerView]="3">
+      <swiper-slide *ngFor="let slide of event_list">
+        <div class="ticket">
+          <img src="{{slide.image}}" alt="Event Image">
+          <div class="ticket-details">
+            <h3>{{slide.name}}</h3>
+            <p>Date: {{slide.date}}</p>
+            <p>Location: {{slide.location}}</p>
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper-container>
   </div>
 </ion-content>

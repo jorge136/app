@@ -1,0 +1,25 @@
+.menu-content {
+    background-color: #2c3e50; /* Color de fondo del menú lateral */
+    color: #20c7f1; /* Color del texto en el menú lateral */
+  }
+  
+  .menu-content ion-list ion-item {
+    color: #106b82; /* Color del texto de los elementos de la lista */
+    font-size: 16px; /* Tamaño de fuente de los elementos de la lista */
+    padding: 12px; /* Espaciado interno de los elementos de la lista */
+  }
+  
+  .menu-content ion-list ion-item:hover {
+    background-color: #34495e; /* Color de fondo al pasar el ratón por los elementos de la lista */
+  }
+  
+  .menu-content ion-toolbar {
+    background-color: #233140; /* Color de fondo de la barra de herramientas del menú */
+  }
+  
+  .menu-content ion-title {
+    color: #020d0f; /* Color del texto en la barra de herramientas del menú */
+  }
+  
+  /* Añade estilos adicionales según sea necesario */
+  

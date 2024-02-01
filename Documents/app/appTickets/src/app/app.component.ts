@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { register } from 'swiper/element/bundle';
-register();
 import { Storage } from '@ionic/storage-angular';
-
+register();
 
 @Component({
   selector: 'app-root',
@@ -10,9 +9,7 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  
-  constructor(
-    private storage: Storage) {}
+  constructor(private storage: Storage) {}
 
   async ngOnInit() {
     // If using a custom driver:

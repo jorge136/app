@@ -7,7 +7,6 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -16,6 +15,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     HomePageRoutingModule
   ],
   declarations: [HomePage],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomePageModule {}
