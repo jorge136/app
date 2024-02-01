@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-
 import { IntroGuard } from './intro.guard';
 
 describe('IntroGuard', () => {
   let guard: IntroGuard;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [IntroGuard]  // Agrega IntroGuard a los providers
+    });
     guard = TestBed.inject(IntroGuard);
   });
 

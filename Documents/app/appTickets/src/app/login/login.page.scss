@@ -1,11 +1,14 @@
+/* Estilo del fondo del contenido de ion-content */
 ion-content {
-  --background: #f4f4f4;
+  --background: #f21212;
 }
 
+/* Estilo para centrar el avatar */
 .center-avatar {
   margin: 20px;
 }
 
+/* Estilo para el logo */
 .logo {
   width: 100px;
   height: 100px;
@@ -13,28 +16,33 @@ ion-content {
   object-fit: cover;
 }
 
+/* Estilos para el formulario */
 form {
   max-width: 80%;
   margin: auto;
 }
 
+/* Estilos para los elementos de ion-item dentro del formulario */
 ion-item {
   margin-bottom: 15px;
 }
 
+/* Estilos para los mensajes de validación */
 .validation-message {
-  color: #d9534f; /* Bootstrap danger color */
+  color: #d9534f; /* Color de peligro (Bootstrap) */
   margin-top: 10px;
 }
 
+/* Estilos para los botones de ion-button */
 ion-button {
   margin-top: 20px;
-  color: white;
-  background-color: #28a745; /* Color de éxito */
+  color: rgb(250, 14, 14);
+  background-color: #2c0791; /* Color de éxito */
   border-radius: 10px; /* Ajustar según sea necesario */
 }
 
+/* Estilos específicos para el botón de registro (si es necesario) */
 .register-button {
-  color: #31708f; /* Bootstrap primary color */
+  color: #31708f; /* Color primario de Bootstrap */
   margin-top: 10px;
 }

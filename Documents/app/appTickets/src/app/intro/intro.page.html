@@ -1,20 +1,45 @@
-<ion-content [fullscreen]="true">
+<!-- ion-content: Contenedor principal de la página con la clase "intro-content" y configuración de pantalla completa -->
+<ion-content [fullscreen]="true" class="intro-content">
+
+  <!-- ion-header: Encabezado de la página con colapso en modo condensado -->
   <ion-header collapse="condense">
+
+    <!-- ion-toolbar: Barra de herramientas del encabezado con el título "Bienvenido" de tamaño grande -->
     <ion-toolbar>
       <ion-title size="large">Bienvenido</ion-title>
     </ion-toolbar>
+
   </ion-header>
 
-  <swiper-container [loop]="true" [pagination]="true" [effect]="'coverflow'" [coverflowEffect]="{'rotate': 40, 'slideShadows': true}">
+  <!-- swiper-container: Contenedor del componente Swiper para la presentación de diapositivas -->
+  <swiper-container class="swiper-container" [loop]="true" [pagination]="true" [effect]="'coverflow'" [coverflowEffect]="{'rotate': 40, 'slideShadows': true}">
+
+    <!-- swiper-slide: Diapositiva del componente Swiper generada dinámicamente utilizando *ngFor -->
     <swiper-slide *ngFor="let slide of slides; let i = index">
-      <ion-card class="ion-padding">
+
+      <!-- ion-card: Tarjeta de presentación con contenido de introducción -->
+      <ion-card class="intro-card">
+
+        <!-- Título de la diapositiva con clase "red-title" -->
         <h1 class="ion-text-center red-title">{{slide.title}}</h1>
-        <p class="{{slide.class}}" [innerHTML]="slide.description"></p>
-        <ion-img [src]="slide.image"></ion-img>
-        <p [innerHTML]="slide.help_text"></p>
-        <ion-button *ngIf="i == 3" expand="full">¡Hola Mundo!</ion-button>
+
+        <!-- Descripción de la diapositiva con clase dinámica y contenido HTML -->
+        <p class="{{slide.class}} intro-description" [innerHTML]="slide.description"></p>
+
+        <!-- ion-img: Imagen de la diapositiva con origen dinámico -->
+        <ion-img [src]="slide.image" class="intro-image"></ion-img>
+
+        <!-- Texto de ayuda de la diapositiva con contenido HTML -->
+        <p class="intro-help-text" [innerHTML]="slide.help_text"></p>
+
+        <!-- ion-button: Botón que se muestra solo en la cuarta diapositiva con clase "intro-button" -->
+        <ion-button *ngIf="i == 3" expand="full" class="intro-button" (click)="goToHome()">Ir a la página de inicio</ion-button>
+        
+
       </ion-card>
+
     </swiper-slide>
+
   </swiper-container>
 
-  
+</ion-content>

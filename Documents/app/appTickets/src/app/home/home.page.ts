@@ -10,23 +10,34 @@ import { EventsService } from '../services/events.service';
 })
 export class HomePage {
   event_list: any;
+
   constructor(
     private router: Router,
     private storage: Storage,
     private events: EventsService
-    ) {}
+  ) {}
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     this.events.getEvents().then(
-      res =>{
+      (res) => {
         this.event_list = res;
-        console.log("Eventos desde el servidor",this.event_list)
+        console.log("Eventos desde el servidor", this.event_list);
       }
-      )
-      console.log("Local Events",this.events.getLocalEvents().events);
+    ).catch((error) => {
+      console.error("Error al obtener eventos desde el servidor", error);
+      // Puedes mostrar un mensaje de error al usuario o realizar otras acciones de manejo de errores.
+    });
+    
+
+    console.log("Local Events", this.events.getLocalEvents().events);
   }
-  
-  goToIntro(){
+
+  goToEventDetails(eventId: number) {
+    // Puedes pasar el eventId a la página de detalles del evento
+    this.router.navigate(['/event-details', eventId]);
+  }
+
+  goToIntro() {
     console.log("go to intro");
     this.router.navigateByUrl('/intro');
     this.storage.set('mostreLaIntro', true);

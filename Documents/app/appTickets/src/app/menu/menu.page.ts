@@ -23,7 +23,7 @@ export class MenuPage implements OnInit {
     private navCtrl: NavController,
     private storage: Storage
   ) { }
-
+  
   ngOnInit() {
   }
 
@@ -39,6 +39,7 @@ export class MenuPage implements OnInit {
   goToHome() {
     this.storage.set("volverAlHome", true)
     this.navCtrl.navigateRoot("menu/home");
+    this
   }
 
 }
