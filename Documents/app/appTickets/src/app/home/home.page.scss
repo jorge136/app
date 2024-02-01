@@ -1,0 +1,81 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out; /* Transición para el contenedor */
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+  color: #000;
+  transition: color 0.3s ease-in-out; /* Transición para el color del strong */
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+  transition: color 0.3s ease-in-out; /* Transición para el color del párrafo */
+}
+
+#container a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease-in-out; /* Transición para el color del enlace */
+}
+
+/* Estilos para el Swiper */
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out; /* Transición para la opacidad de las diapositivas */
+}
+
+/* Estilo específico para la clase .avatar-slide */
+.avatar-slide {
+  --border-radius: 0px;
+}
+
+/* Estilo específico para la clase .red-title */
+.red-title {
+  color: #ff0000;
+  transition: color 0.3s ease-in-out; /* Transición para el color del título rojo */
+}
+
+/* Estilos para las clases .slide-1, .slide-2, .slide-3, .slide-4 */
+.slide-1 {
+  background-color: #b41a90;
+  font-size: 30px;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transiciones para el fondo y el color del texto */
+}
+
+.slide-2 {
+  background-color: #2b9039;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.slide-3 {
+  background-color: #0e1789;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.slide-4 {
+  background-color: #d0d537;
+  color: #000;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "appTickets",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
