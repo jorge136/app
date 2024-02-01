@@ -1,44 +1,53 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
+
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.page.html',
   styleUrls: ['./intro.page.scss'],
 })
-export class IntroPage  {
+export class IntroPage implements OnInit {
+
   slides = [
     {
-      
-      title: "Boletería en tu Mano",
-      description: "Bienvenido a la aplicación de boletería BoletoBlink. Aquí puedes acceder y comprar boletos para una variedad de eventos emocionantes.",
-      image: "assets/Blanco Negro Escrito a Mano Amor en Fondo Lienzo.png",
-      help_text: "Explora nuestra plataforma para descubrir eventos destacados y compra tus boletos de manera fácil y segura.",
+      title: "Bienvenido a la Experiencia Futbolística",
+      description: "Explora los emocionantes eventos de fútbol y asegura tu asiento para vivir momentos inolvidables.",
+      image: "../../assets/images/slide1.webp",
+      help_text: "Descubre una nueva forma de experimentar el fútbol. ¡Compra tus boletos ahora!",
       class: "slide-1 red-title"
     },
     {
-      title: "Descubre Nuevos Eventos",
-      description: "Con BoletoBlink, puedes descubrir una amplia gama de eventos, desde conciertos y festivales hasta conferencias y espectáculos deportivos.",
-      image: "assets/descarga.jpeg",
-      help_text: "Explora la variedad de eventos disponibles y encuentra experiencias únicas para disfrutar con amigos y familiares.",
+      title: "Explora los Mejores Eventos",
+      description: "Descubre los partidos más emocionantes, desde encuentros locales hasta competiciones internacionales.",
+      image: "../../assets/images/slide2.webp",
+      help_text: "Explora nuestra amplia selección de eventos de fútbol y encuentra tus favoritos.",
       class: ""
     },
     {
-      title: "BoletoBlink Cloud",
-      description: "Nuestra plataforma en la nube, BoletoBlink Cloud, te permite gestionar y escalar tus eventos, brindando servicios integrados como notificaciones push, construcción nativa y autenticación de usuarios.",
-      image: "C:\\Users\\Jorge%20M%20De%20La%20Peña\\OneDrive\\Escritorio\\ionic-apps\\app-BoletosBlink\\src\\assets\\Screenshot%202024-01-22%201429.png",
-      help_text: "Para obtener más detalles sobre BoletoBlink y sus servicios, visita <a href='https://www.tuboleta.com/'>nuestra documentación</a>.",
+      title: "Compra tus Boletos",
+      description: "Asegura tu lugar para vivir la pasión del fútbol. ¡Compra tus boletos de manera fácil y segura!",
+      image: "../../assets/images/slide3.webp",
+      help_text: "Disfruta de la comodidad de comprar boletos en línea y prepárate para el partido.",
       class: "slide-3"
+    },
+    {
+      title: "Únete a la Emoción",
+      description: "Conviértete en parte de la comunidad apasionada del fútbol. ¡No te pierdas ni un momento!",
+      image: "../../assets/images/slide4.webp",
+      help_text: "Únete a nosotros y comparte la emoción del fútbol con aficionados de todo el mundo.",
     }
-    
-    
-    
   ];
 
+  constructor(
+    private storage: Storage
+    ) { }
 
-  constructor() { }
+  ngOnInit() {
+  }
 
   ionViewDidEnter() {
-    console.log("Ya entre y vi la intro");
-    // Vamos a guardar en el storage que ya vio la intro
+    console.log("La introducción ha sido vista");
+    this.storage.set("mostreLaIntro", true);
   }
 
 }

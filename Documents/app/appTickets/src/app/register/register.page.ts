@@ -58,6 +58,7 @@ export class RegisterPage implements OnInit {
   register(regiser_data: any){
     console.log(regiser_data);
     //crear el servicio de registro
+    //Crear mensaje de respuesta de registro
   }
 
   goToLogin(){

@@ -10,8 +10,8 @@ export class AuthService {
   loginUser(credential: any){
     return new Promise((accept, reject) => {
       if(
-        credential.email == 'andrea@gmail.com' 
-        //&& credential.password == '123456'
+        credential.email == '3126364249z@gmail.com' 
+        //&& credential.password == '12345'
         ){
         accept('Login correcto');
       }else{

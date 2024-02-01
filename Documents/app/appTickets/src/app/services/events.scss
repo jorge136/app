@@ -1,0 +1,32 @@
+/* Agrega estos estilos en tu archivo global.scss o en el archivo específico del componente */
+
+/* Estilos para la lista de eventos */
+ion-list.events-list {
+    background-color: #f5f5f5; /* Color de fondo de la lista */
+  }
+  
+  ion-item.event-item {
+    border-bottom: 1px solid #ddd; /* Borde inferior de cada elemento de la lista */
+  }
+  
+  ion-item.event-item ion-avatar {
+    --border-width: 2px; /* Grosor del borde del avatar */
+    --border-color: #3498db; /* Color del borde del avatar */
+  }
+  
+  ion-item.event-item ion-avatar img {
+    width: 60px; /* Ancho de la imagen del avatar */
+    height: 60px; /* Altura de la imagen del avatar */
+  }
+  
+  ion-item.event-item ion-label {
+    margin-left: 10px; /* Margen izquierdo del texto del evento */
+  }
+  
+  ion-item.event-item ion-note {
+    font-size: 12px; /* Tamaño de fuente para detalles adicionales */
+    color: #888; /* Color del texto de detalles adicionales */
+  }
+  
+  /* Añade estilos adicionales según sea necesario */
+  

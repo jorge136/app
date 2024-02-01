@@ -1,0 +1,58 @@
+/* app.component.scss */
+
+ion-app {
+    background-color: #f70a0a; /* Color de fondo de la aplicación */
+    font-family: 'Arial', sans-serif; /* Tipo de fuente global */
+  }
+  
+  ion-router-outlet {
+    padding: 10px; /* Espaciado interno para el contenido principal */
+  }
+  
+  ion-header {
+    background-color: #3498db; /* Color de fondo de la barra de navegación */
+  }
+  
+  ion-toolbar {
+    --background: #3498db; /* Color de fondo de la barra de herramientas */
+    --color: #f00e0e; /* Color del texto de la barra de herramientas */
+  }
+  
+  ion-title {
+    font-size: 20px; /* Tamaño de fuente del título */
+  }
+  
+  ion-content {
+    padding: 10px; /* Espaciado interno para el contenido principal */
+  }
+  
+  ion-item {
+    border-bottom: 1px rg #ef0d0d; /* Borde inferior de los elementos de la lista */
+  }
+  
+  ion-avatar {
+    --border-width: 2px; /* Grosor del borde del avatar */
+    --border-color: #f61010; /* Color del borde del avatar */
+  }
+  
+  ion-avatar img {
+    width: 60px; /* Ancho de la imagen del avatar */
+    height: 60px; /* Altura de la imagen del avatar */
+  }
+  
+  ion-label {
+    margin-left: 10px; /* Margen izquierdo para etiquetas de ion-item */
+  }
+  
+  ion-note {
+    font-size: 12px; /* Tamaño de fuente para detalles adicionales */
+    color: #888; /* Color del texto de detalles adicionales */
+  }
+  
+  /* Estilos generales para botones */
+  ion-button {
+    font-weight: bold;
+  }
+  
+  /* Estilos adicionales según sea necesario */
+  

@@ -7,7 +7,7 @@
 <ion-content>
   <figure class="ion-text-center">
     <ion-avatar class="center-avatar">
-      <img src="../../assets/images/user.jpg" alt="logo" class="logo">
+      <img src="../../assets/descarga.png" alt="logo" class="logo">
     </ion-avatar>
   </figure> 
   <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
@@ -32,6 +32,7 @@
     expand="full"
     >Login</ion-button>
   </form>
+  <!--Agregar boton o link que te diriga al register-->
   <div class="validation-message">
     {{loginMessage}}
   </div>

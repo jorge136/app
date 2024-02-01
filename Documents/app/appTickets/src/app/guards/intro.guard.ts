@@ -20,7 +20,7 @@ export class IntroGuard implements CanActivate {
       return true;
     } else {
       console.log('No mostre la intro');
-      //this.router.navigateByUrl('/intro');
+      this.router.navigateByUrl('/intro');
       return true;
     }
   }
