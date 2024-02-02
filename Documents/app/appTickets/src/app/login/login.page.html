@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center ion-text-uppercase">login</ion-title>
+    <ion-title class="ion-text-center ion-text-uppercase">Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,29 +10,50 @@
       <img src="../../assets/descarga.png" alt="logo" class="logo">
     </ion-avatar>
   </figure> 
+
   <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+
+    <!-- Campo Email -->
     <ion-item>
-      <ion-input label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"></ion-input>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
     </ion-item>
+
     <div class="validation-message">
       <ng-container *ngFor="let validation of validation_messages.email">
-        <div *ngIf="
-        (loginForm.get('email')?.hasError(validation.type) && 
-        loginForm.get('email')?.dirty)
-        ">{{validation.message}}</div>
+        <div *ngIf="loginForm.get('email')?.hasError(validation.type) && loginForm.get('email')?.dirty">
+          {{validation.message}}
+        </div>
       </ng-container>
     </div>
-    <!-- Crear campo password -->
-    <!-- Crear validaciones en pantalla -->
+
+    <!-- Campo Contraseña -->
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+
+    <div class="validation-message">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div *ngIf="loginForm.get('password')?.hasError(validation.type) && loginForm.get('password')?.dirty">
+          {{validation.message}}
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- Botón de Login -->
     <ion-button 
-    type="submit" 
-    [disabled]="!loginForm.valid"
-    color="success"
-    shape="round"
-    expand="full"
-    >Login</ion-button>
+      type="submit" 
+      [disabled]="!loginForm.valid"
+      color="success"
+      shape="round"
+      expand="full"
+    >
+      Login
+    </ion-button>
   </form>
-  <!--Agregar boton o link que te diriga al register-->
+
+  <!-- Enlace al registro -->
   <div class="validation-message">
     {{loginMessage}}
   </div>

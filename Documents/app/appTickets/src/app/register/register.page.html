@@ -1,31 +1,51 @@
 <ion-header>
   <ion-toolbar>
+    <!-- Botón para volver a la página de inicio de sesión -->
     <ion-buttons>
       <ion-button (click)="goToLogin()">Volver</ion-button>
     </ion-buttons>
-    <ion-title>register</ion-title>
+    <!-- Título de la página -->
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <!-- Logo del formulario -->
   <figure class="ion-text-center">
-    <ion-avatar class="center-avatar"> <!-- crear clase css para centrar el avatar -->
-      <img src="../../assets/images/descarga.png" alt="inicio" class="logo">
+    <ion-avatar class="center-avatar">
+      <img src="../../assets/descarga.png" alt="inicio" class="logo">
     </ion-avatar>
   </figure>
-  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+
+  <h1>Formulario de Registro</h1>
+  
+  <!-- Formulario de registro -->
+  <form action="formulario.php" method="post">
     <ion-item>
-      <ion-input label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"></ion-input>
-      <ion-input label="Nombre" labelPlacement="floating" placeholder="Nommbre" formControlName="name"></ion-input>
+      <!-- Campo de Nombre -->
+      <ion-label position="stacked">Nombre:</ion-label>
+      <ion-input type="text" id="nombre" name="nombre" required></ion-input>
+    </ion-item>
 
-      <ion-input label="Apellido" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"></ion-input>
+    <ion-item>
+      <!-- Campo de Correo -->
+      <ion-label position="stacked">Correo:</ion-label>
+      <ion-input type="email" id="correo" name="correo" required></ion-input>
+    </ion-item>
 
-    <!-- Colocar campos de password como tipo password -->
+    <ion-item>
+      <!-- Campo de Celular -->
+      <ion-label position="stacked">Celular:</ion-label>
+      <ion-input type="tel" id="celular" name="celular" required></ion-input>
+    </ion-item>
 
-      <ion-input label="Contraseña" labelPlacement="floating" placeholder="Contraseña" formControlName="password"></ion-input>
+    <ion-item>
+      <!-- Campo de Dirección -->
+      <ion-label position="stacked">Dirección:</ion-label>
+      <ion-input type="text" id="direccion" name="direccion"></ion-input>
+    </ion-item>
 
-      <ion-input label="Confirme Contraseña" labelPlacement="floating" placeholder="Confirme Contraseña" formControlName="confirmation_password"></ion-input>
-    </ion-item>   
+    <!-- Botón de registro -->
     <ion-button
       expand="full"
       shape="round"
@@ -37,3 +57,4 @@
     </ion-button>
   </form>
 </ion-content>
+

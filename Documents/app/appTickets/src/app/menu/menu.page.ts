@@ -1,10 +1,6 @@
-// menu.page.ts
-
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
-import { NavController } from '@ionic/angular';
+import { MenuController, NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
-
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +8,7 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-  event_list: any[] = [  // Debes ajustar esta estructura según tu modelo de datos
+  event_list: any[] = [  
     { name: 'Evento 1', date: '2024-02-01', location: 'Ubicación 1', image: 'imagen1.jpg' },
     { name: 'Evento 2', date: '2024-02-02', location: 'Ubicación 2', image: 'imagen2.jpg' },
     // Agrega más eventos según sea necesario
@@ -37,9 +33,11 @@ export class MenuPage implements OnInit {
   }
 
   goToHome() {
-    this.storage.set("volverAlHome", true)
+    this.storage.set("volverAlHome", true);
     this.navCtrl.navigateRoot("menu/home");
-    this
   }
 
+  goToRegister() {
+    this.navCtrl.navigateForward("/register");
+  }
 }

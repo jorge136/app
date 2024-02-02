@@ -22,30 +22,10 @@
           <p><strong>Fecha:</strong> {{slide.event_date | date:'dd/MM/yyyy'}}</p>
           <p><strong>Lugar:</strong> {{slide.location || slide.address}}</p>
           <p><strong>Ciudad:</strong> {{slide.city}}</p>
+        
         </ion-card-content>
       </ion-card>
     </swiper-slide>
   </swiper-container>
-</ion-content>
-
-<ion-content>
-  <ion-card>
-    <ion-card-content>
-      <div class="ticket-container">
-        <swiper-container [pagination]="true" [slidesPerView]="3">
-          <swiper-slide *ngFor="let slide of event_list">
-            <ion-card class="ticket">
-              <ion-img [src]="slide.image" alt="Event Image"></ion-img>
-              <ion-card-content class="ticket-details">
-                <h3>{{slide.name}}</h3>
-                <p>Date: {{slide.event_date}}</p>
-                <p>Location: {{slide.location}}</p>
-              </ion-card-content>
-            </ion-card>
-          </swiper-slide>
-        </swiper-container>
-      </div>
-    </ion-card-content>
-  </ion-card>
 </ion-content>
 

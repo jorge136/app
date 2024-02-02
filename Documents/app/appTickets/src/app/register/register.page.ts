@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 
@@ -9,9 +9,10 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-  registerForm: FormGroup; // declare the registerForm property
-  //crear mensajes de validacion
-  //mensaje respuesta de registro
+  registerForm: FormGroup; // declarar la propiedad registerForm
+  // mensajes de validación y respuesta de registro
+  registerMessage: string = ''; // agregar variable para mensajes de registro
+
   constructor(
     private formBuilder: FormBuilder,
     private navCtrl: NavController,
@@ -26,42 +27,50 @@ export class RegisterPage implements OnInit {
             "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
           )
         ])
-      )
-      //Crear validaciones para el password, confirmation_password, name y last_name
-      , 
+      ),
       password: new FormControl(
         "",
         Validators.compose([
+          Validators.required,
+          // Puedes agregar más validadores según tus requisitos
         ])
       ),
       confirmation_password: new FormControl(
         "",
         Validators.compose([
+          Validators.required,
+          // Puedes agregar más validadores según tus requisitos
         ])
       ),
       name: new FormControl(
         "",
         Validators.compose([
+          Validators.required,
+          // Puedes agregar más validadores según tus requisitos
         ])
       ),
       last_name: new FormControl(
         "",
         Validators.compose([
+          // Puedes agregar más validadores según tus requisitos
         ])
       )
-    })
-    }
-
-  ngOnInit() {
+    });
   }
 
-  register(regiser_data: any){
-    console.log(regiser_data);
-    //crear el servicio de registro
-    //Crear mensaje de respuesta de registro
+  ngOnInit() {}
+
+  register(register_data: any) {
+    console.log(register_data);
+
+    // Agregar lógica de registro aquí
+    // Por ejemplo, podrías llamar a un servicio de registro
+
+    // Simulando un mensaje de éxito para propósitos de demostración
+    this.registerMessage = '¡Registro exitoso!';
   }
 
-  goToLogin(){
-    this.navCtrl.navigateBack("/login");
+  goToLogin() {
+    this.navCtrl.navigateBack('/login');
   }
 }
