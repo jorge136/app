@@ -2,7 +2,7 @@
   <ion-toolbar>
     <!-- Botón para volver a la página de inicio de sesión -->
     <ion-buttons>
-      <ion-button (click)="goToLogin()">Volver</ion-button>
+      <ion-button (click)="goToHome()">Volver</ion-button>
     </ion-buttons>
     <!-- Título de la página -->
     <ion-title>Registro</ion-title>
@@ -20,32 +20,62 @@
   <h1>Formulario de Registro</h1>
   
   <!-- Formulario de registro -->
-  <form action="formulario.php" method="post">
+  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
     <ion-item>
-      <!-- Campo de Nombre -->
-      <ion-label position="stacked">Nombre:</ion-label>
-      <ion-input type="text" id="nombre" name="nombre" required></ion-input>
-    </ion-item>
-
+      <ion-input label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"></ion-input>
+    </ion-item>  
+    <div class="validation-message">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div *ngIf="
+        (registerForm.get('email')?.hasError(validation.type) && 
+        registerForm.get('email')?.dirty)
+        ">{{validation.message}}</div>
+      </ng-container>
+    </div>
     <ion-item>
-      <!-- Campo de Correo -->
-      <ion-label position="stacked">Correo:</ion-label>
-      <ion-input type="email" id="correo" name="correo" required></ion-input>
-    </ion-item>
-
+      <ion-input label="Nombre" labelPlacement="floating" placeholder="Nommbre" formControlName="name"></ion-input>
+    </ion-item> 
+    <div class="validation-message">
+      <ng-container *ngFor="let validation of validation_messages.name">
+        <div *ngIf="
+        (registerForm.get('name')?.hasError(validation.type) && 
+        registerForm.get('name')?.dirty)
+        ">{{validation.message}}</div>
+      </ng-container>
+    </div>
     <ion-item>
-      <!-- Campo de Celular -->
-      <ion-label position="stacked">Celular:</ion-label>
-      <ion-input type="tel" id="celular" name="celular" required></ion-input>
-    </ion-item>
-
+      <ion-input label="Apellido" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"></ion-input>
+    </ion-item> 
+    <div class="validation-message">
+      <ng-container *ngFor="let validation of validation_messages.last_name">
+        <div *ngIf="
+        (registerForm.get('last_name')?.hasError(validation.type) && 
+        registerForm.get('last_name')?.dirty)
+        ">{{validation.message}}</div>
+      </ng-container>
+    </div>
     <ion-item>
-      <!-- Campo de Dirección -->
-      <ion-label position="stacked">Dirección:</ion-label>
-      <ion-input type="text" id="direccion" name="direccion"></ion-input>
-    </ion-item>
-
-    <!-- Botón de registro -->
+      <ion-input type="password" label="Contraseña" labelPlacement="floating" placeholder="Contraseña" formControlName="password"></ion-input>
+    </ion-item> 
+    <div class="validation-message">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div *ngIf="
+        (registerForm.get('password')?.hasError(validation.type) && 
+        registerForm.get('password')?.dirty)
+        ">{{validation.message}}</div>
+      </ng-container>
+    </div> 
+    <ion-item>
+      <ion-input type="password" label="Confirme Contraseña" labelPlacement="floating" placeholder="Confirme Contraseña" formControlName="confirmation_password"></ion-input>
+    </ion-item>   
+    <div class="validation-message">
+      <ng-container *ngFor="let validation of validation_messages.confirmation_password">
+        <div *ngIf="
+        (registerForm.get('confirmation_password')?.hasError(validation.type) && 
+        registerForm.get('confirmation_password')?.dirty)
+        ">{{validation.message}}</div>
+      </ng-container>
+    </div>
     <ion-button
       expand="full"
       shape="round"
