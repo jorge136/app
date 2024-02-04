@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { NavController } from '@ionic/angular'; // Agrega esta importación
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.page.html',
@@ -39,8 +39,9 @@ export class IntroPage implements OnInit {
   ];
 
   constructor(
+    private router: Router,
     private storage: Storage,
-    private navCtrl: NavController  // Asegúrate de inyectar NavController aquí
+    private navCtrl: NavController,  // Asegúrate de inyectar NavController aquí
   ) { }
 
   ngOnInit() {
@@ -48,11 +49,12 @@ export class IntroPage implements OnInit {
   }
 
   ionViewDidEnter() {
-    // ...
+    console.log("Ya entre y vi la intro");
   }
 
-  goToHome() {
-    this.storage.set("volverAlHome", true);
-    this.navCtrl.navigateRoot("menu/home");
+  goToHome(){
+    console.log("go to home");
+    this.router.navigateByUrl('menu/home');
+    this.storage.set('mostreLaIntro', true);
   }
 }
